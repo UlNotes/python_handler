@@ -1,10 +1,13 @@
 # Python Handler
 C++ Static Class that opens a python file, runs it, and returns the output
 ---
-Can run any python file with a main() method
+Features
+- Can run any python file with a main() method
+- Can have any number of char* arguments for the main() method
+- The C++ recieves a PyObject* return value
 
 Features being added soon
-- [ ] Send arguments to a main() method that needs arguments
+- [x] Send arguments to a main() method that needs arguments
 - [ ] Get access to the underlying C++'s API
 ---
 ## Usage
