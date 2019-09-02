@@ -8,7 +8,8 @@ Features
 
 Features being added soon
 - [x] Send arguments to a main() method that needs arguments
-- [ ] Get access to the underlying C++'s API
+- [x] Get access to the underlying C++'s API
+- [ ] Create a better way to access the C++'s API, probably a method in PythonHandler
 ---
 ## Usage
 - You need to have python installed.
