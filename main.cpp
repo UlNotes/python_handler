@@ -8,6 +8,8 @@ int main(int argc, char *args[])
 
   PythonHandler::runFile("talk", "./", 3, "Woah", "Two arguments!", "Even three arguments!");
 
+  PythonHandler::runFile("accessc", "./");
+
   PythonHandler::close();
 
   return 0;

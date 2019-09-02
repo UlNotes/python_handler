@@ -3,3 +3,4 @@ def main(*arg):
     print("You have", len(arg), "message(s):")
     for i in range(0, len(arg)):
         print(arg[i])
+    print()

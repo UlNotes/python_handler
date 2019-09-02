@@ -6,8 +6,26 @@ using std::strcat;
 #include <iostream>
 using std::cout;
 
+// Testing access to C API
+static char* secretMessage = "Very cool, this is the secret message";
+static PyObject* emb_getSecretMessage(PyObject *self, PyObject *args)
+{
+  return PyUnicode_FromString(secretMessage);
+}
+
+static PyMethodDef EmbMethods[] = {{"getMessage", emb_getSecretMessage, METH_NOARGS, "Get the Secret Message"}, {NULL, NULL, 0, NULL}};
+
+static PyModuleDef EmbModule = {PyModuleDef_HEAD_INIT, "py_handler", NULL, -1, EmbMethods, NULL, NULL, NULL, NULL};
+
+static PyObject* PyInit_emb(void)
+{
+  return PyModule_Create(&EmbModule);
+}
+
 void PythonHandler::init()
 {
+  PyImport_AppendInittab("py_handler", &PyInit_emb);
+
   Py_Initialize();
 }
 
